@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4">
+        <div class="col-md-12 mb-5">
             <img src="{{ url('img/logo.png') }}" class="rounded mx-auto d-block" width="700" >
         </div>
         @foreach($barangs as $barang)
