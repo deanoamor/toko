@@ -10,7 +10,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $barang->nama_barang }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $pesan->nama_barang }}</li>
                 </ol>
             </nav>
         </div>
@@ -19,26 +19,26 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{ url('uploads') }}/{{ $barang->gambar }}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                            <img src="{{ url('uploads') }}/{{ $pesan->gambar }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                         </div>
                         <div class="col-md-6 mt-5">
-                            <h2>{{ $barang->nama_barang }}</h2>
+                            <h2>{{ $pesan->nama_barang }}</h2>
                             <table class="table">
                                 <tbody>
                                     <tr>
                                         <td>Harga</td>
                                         <td>:</td>
-                                        <td>Rp. {{ number_format($barang->harga) }}</td>
+                                        <td>Rp. {{ number_format($pesan->harga) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Stok</td>
                                         <td>:</td>
-                                        <td>{{ number_format($barang->stok) }}</td>
+                                        <td>{{ number_format($pesan->stok) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>:</td>
-                                        <td>{{ $barang->keterangan }}</td>
+                                        <td>{{ $pesan->keterangan }}</td>
                                     </tr>
 
                                     <tr>
