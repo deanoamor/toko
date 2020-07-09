@@ -7,6 +7,7 @@ use App\barang;
 use App\Pesanan;
 use App\PesananDetail;
 use Auth;
+use SweetAlert;
 use Carbon\Carbon;
 
 class PesanController extends Controller
@@ -74,7 +75,7 @@ class PesanController extends Controller
     	$pesanan->jumlah_harga = $pesanan->jumlah_harga+$pesan->harga*$request->jumlah_pesan;
     	$pesanan->update();
             
-            
+            alert()->success('Suskes masuk keranjang', 'sukses');
             return redirect('home');
     }
     
