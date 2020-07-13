@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('pesan/{id}', 'PesanController@index');
 Route::post('pesan/{id}', 'PesanController@pesan');
+Route::get('check-out', 'PesanController@check_out');

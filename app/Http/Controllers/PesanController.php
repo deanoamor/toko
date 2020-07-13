@@ -78,5 +78,12 @@ class PesanController extends Controller
             alert()->success('Suskes masuk keranjang', 'sukses');
             return redirect('home');
     }
+
+    public function check_out(){
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        $pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
+
+        return view('pesan.check_out', compact('pesanan', 'pesanan_details'));
+    }
     
 }
