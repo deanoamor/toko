@@ -41,16 +41,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                        <?php
-                                $pesanan_utama = \App\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
-                                $notif = \App\PesananDetail::where('pesanan_id', $pesanan_utama->id)->count(); 
-                        ?>
-                        <a class="nav-link" href="{{ url('check-out') }}">
-                                <i class="fa fa-shopping-cart"></i>
-                                <!-- @if(!empty($notif)) -->
-                                <span class="badge badge-danger">{{ $notif }}</span>
-                                <!-- @endif -->
-                        </a>
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -61,6 +52,16 @@
                                 </li>
                             @endif
                         @else
+                        <?php
+                                $pesanan_utama = \App\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+                                $notif = \App\PesananDetail::where('pesanan_id', $pesanan_utama->id)->count(); 
+                        ?>
+                        <a class="nav-link" href="{{ url('check-out') }}">
+                                <i class="fa fa-shopping-cart"></i>
+                                <!-- @if(!empty($notif)) -->
+                                <span class="badge badge-danger">{{ $notif }}</span>
+                                <!-- @endif -->
+                        </a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
