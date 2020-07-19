@@ -54,13 +54,16 @@
                         @else
                         <?php
                                 $pesanan_utama = \App\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+                                if(!empty($pesanan_utama))
+                                {
                                 $notif = \App\PesananDetail::where('pesanan_id', $pesanan_utama->id)->count(); 
+                                }
                         ?>
                         <a class="nav-link" href="{{ url('check-out') }}">
                                 <i class="fa fa-shopping-cart"></i>
-                                <!-- @if(!empty($notif)) -->
+                                @if(!empty($notif))
                                 <span class="badge badge-danger">{{ $notif }}</span>
-                                <!-- @endif -->
+                                @endif
                         </a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

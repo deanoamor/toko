@@ -18,6 +18,8 @@
             <div class="card">
                 <div class="card-body">
                     <h3><i class="fa fa-shopping-cart"></i> Check Out</h3>
+                    @if(!empty($pesanan))
+                    <p style= "align : right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -62,6 +64,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    @endif
                 </div>
             </div>
         </div>
