@@ -23,3 +23,5 @@ Route::post('pesan/{id}', 'PesanController@pesan');
 Route::get('check-out', 'PesanController@check_out');
 Route::delete('check-out/{id}', 'PesanController@delete');
 Route::get('konfirmasi-check-out', 'PesanController@konfirmasi');
+
+Route::get('profile', 'ProfileController@index');
