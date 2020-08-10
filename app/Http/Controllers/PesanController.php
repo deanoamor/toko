@@ -7,6 +7,7 @@ use App\barang;
 use App\Pesanan;
 use App\PesananDetail;
 use Auth;
+use App\User;
 use SweetAlert;
 use Carbon\Carbon;
 
@@ -80,6 +81,7 @@ class PesanController extends Controller
     }
 
     public function check_out(){
+        
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
         $pesanan_details = [];
         if(!empty($pesanan )){
@@ -106,9 +108,32 @@ class PesanController extends Controller
     
     public function konfirmasi()
     {
+
+        $user = User::where('id', Auth::user()->id)->first();
+
+        if(empty($user->alamat))
+        {
+            alert()->error('identitas belum lengkap', 'error');
+            return redirect('profile');
+        }
+
+        if(empty($user->nohp))
+        {
+            alert()->error('identitas belum lengkap', 'error');
+            return redirect('profile');
+        }
+
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        $pesanan_id = $pesanan->id;
         $pesanan->status = 1;
         $pesanan->update();
+
+        $pesanan_details = PesananDetail::where('pesanan_id', $pesanan_id)->get();
+        foreach ($pesanan_details as $pesanan_detail) {
+            $barang = Barang::where('id', $pesanan_detail->barang_id)->first();
+            $barang->stok = $barang->stok-$pesanan_detail->jumlah;
+            $barang->update();
+        }
 
         
         alert()->success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
