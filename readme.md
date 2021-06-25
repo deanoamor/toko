@@ -9,7 +9,7 @@
 
 
 ## About Project
-This is an online store project based on a tutorial from the Wahidev Academy channel on youtube. The Chanel is amazing and helpful.
+This is an online store project based on a tutorial from the Wahidev Academy channel on youtube. The Channel is amazing and helpful.
 
 Channel link: https://www.youtube.com/channel/UCXsAaDHG8E4PN3rIHGaZ4XQ
 
