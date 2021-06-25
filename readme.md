@@ -7,6 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+## About Project
+This is an online store project based on a tutorial from the Wahidev Academy channel on youtube. The Chanel is amazing and helpful.
+
+Channel link: https://www.youtube.com/channel/UCXsAaDHG8E4PN3rIHGaZ4XQ
+
+Video tutorial link for this project: https://www.youtube.com/watch?v=Am4XQN62TJc&list=PLIan8aHxsPj38DaYh-wzogU2pKIH_X2gI
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
